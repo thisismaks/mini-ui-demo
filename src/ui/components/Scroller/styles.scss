@@ -1,0 +1,22 @@
+@import "../../theme";
+
+.parent {
+  width: 100%;
+  overflow: hidden;
+}
+
+.measure {
+  width: max-content;
+}
+
+.render {
+  width: unset;
+}
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:export {
+  /* stylelint-disable property-no-unknown */
+  scroll_margin: $spacing * 3;
+  in_pace: 10;
+  out_pace: 2;
+}

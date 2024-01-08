@@ -1,0 +1,221 @@
+@import "../../theme";
+
+$primary: $primary_main;
+$secondary: $success_main;
+$error: $error_main;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+
+@mixin _disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+@mixin _switch($width, $height) {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin _slider($slider, $padding, $radius) {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $grey_500;
+  border-radius: $radius;
+  transition: 0.4s;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: $slider / 2;
+    width: $slider / 2;
+    border: $slider / 4 solid $common_white;
+    background-color: $common_white;
+    left: $padding;
+    bottom: $padding;
+    transition: 0.4s;
+    box-shadow: $shadow;
+    border-radius: 50%;
+  }
+}
+
+// SMALL
+$small_width: 34px;
+$small_height: 20px;
+$small_padding: 3px;
+$small_slider: 14px;
+$small_radius: 100px;
+
+// SMALL PRIMARY
+@mixin _slider_small_primary {
+  input:checked + .slider_small_primary {
+    background-color: $primary;
+  }
+
+  input:disabled + .slider_small_primary {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_small_primary::before {
+    background-color: $primary;
+  }
+
+  input:checked + .slider_small_primary::before {
+    transform: translateX($small_slider);
+  }
+}
+
+.switch_small_primary {
+  @include _switch($small_width, $small_height);
+  @include _slider_small_primary;
+}
+
+// SMALL SECONDARY
+@mixin _slider_small_secondary {
+  input:checked + .slider_small_secondary {
+    background-color: $secondary;
+  }
+
+  input:disabled + .slider_small_secondary {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_small_secondary::before {
+    background-color: $secondary;
+  }
+
+  input:checked + .slider_small_secondary::before {
+    transform: translateX($small_slider);
+  }
+}
+
+.switch_small_secondary {
+  @include _switch($small_width, $small_height);
+  @include _slider_small_secondary;
+}
+
+// SMALL ERROR
+@mixin _slider_small_error {
+  input:checked + .slider_small_error {
+    background-color: $error;
+  }
+
+  input:disabled + .slider_small_error {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_small_error::before {
+    background-color: $error;
+  }
+
+  input:checked + .slider_small_error::before {
+    transform: translateX($small_slider);
+  }
+}
+
+.switch_small_error {
+  @include _switch($small_width, $small_height);
+  @include _slider_small_error;
+}
+
+.slider_small_primary,
+.slider_small_secondary,
+.slider_small_error, {
+  @include _slider($small_slider, $small_padding, $small_radius);
+}
+
+// MEDIUM
+$medium_width: 60px;
+$medium_height: 34px;
+$medium_padding: 4px;
+$medium_slider: 26px;
+$medium_radius: 34px;
+
+// MEDIUM PRIMARY
+@mixin _slider_medium_primary {
+  input:checked + .slider_medium_primary {
+    background-color: $primary;
+  }
+
+  input:disabled + .slider_medium_primary {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_medium_primary::before {
+    background-color: $primary;
+  }
+
+  input:checked + .slider_medium_primary::before {
+    transform: translateX($medium_slider);
+  }
+}
+
+.switch_medium_primary {
+  @include _switch($medium_width, $medium_height);
+  @include _slider_medium_primary;
+}
+
+// MEDIUM SECONDARY
+@mixin _slider_medium_secondary {
+  input:checked + .slider_medium_secondary {
+    background-color: $secondary;
+  }
+
+  input:disabled + .slider_medium_secondary {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_medium_secondary::before {
+    background-color: $secondary;
+  }
+
+  input:checked + .slider_medium_secondary::before {
+    transform: translateX($medium_slider);
+  }
+}
+
+.switch_medium_secondary {
+  @include _switch($medium_width, $medium_height);
+  @include _slider_medium_secondary;
+}
+
+// MEDIUM ERROR
+@mixin _slider_medium_error {
+  input:checked + .slider_medium_error {
+    background-color: $error;
+  }
+
+  input:disabled + .slider_medium_error {
+    @include _disabled;
+  }
+
+  input:focus-visible + .slider_medium_error::before {
+    background-color: $error;
+  }
+
+  input:checked + .slider_medium_error::before {
+    transform: translateX($medium_slider);
+  }
+}
+
+.switch_medium_error {
+  @include _switch($medium_width, $medium_height);
+  @include _slider_medium_error;
+}
+
+.slider_medium_primary,
+.slider_medium_secondary,
+.slider_medium_error {
+  @include _slider($medium_slider, $medium_padding, $medium_radius);
+}

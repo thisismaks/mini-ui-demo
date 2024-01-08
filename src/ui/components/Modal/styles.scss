@@ -1,0 +1,22 @@
+@import "../../theme";
+
+.root {
+  position: fixed;
+  z-index: $z_index_modal;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $common_white;
+}
+
+.z_index {
+  z-index: -1;
+}

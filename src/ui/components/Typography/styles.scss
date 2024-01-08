@@ -1,0 +1,115 @@
+@import "../../theme";
+
+@mixin _reset {
+  margin: 0;
+}
+
+//
+.h1 {
+  @include _reset;
+  @include _h1;
+}
+
+.h2 {
+  @include _reset;
+  @include _h2;
+}
+
+.h3 {
+  @include _reset;
+  @include _h3;
+}
+
+.h4 {
+  @include _reset;
+  @include _h4;
+}
+
+.h5 {
+  @include _reset;
+  @include _h5;
+}
+
+.h6 {
+  @include _reset;
+  @include _h6;
+}
+
+.subtitle1 {
+  @include _reset;
+  @include _subtitle1;
+}
+
+.subtitle2 {
+  @include _reset;
+  @include _subtitle2;
+}
+
+.body1 {
+  @include _reset;
+  @include _body1;
+}
+
+.body2 {
+  @include _reset;
+  @include _body2;
+}
+
+.button {
+  @include _reset;
+  @include _button;
+}
+
+.caption {
+  @include _reset;
+  @include _caption;
+}
+
+//
+.noWrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gutterBottom {
+  margin-bottom: 1em;
+}
+
+//
+.center {
+  text-align: center;
+}
+
+.inherit {
+  text-align: inherit;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+//
+.light {
+  font-weight: $font_weight_light;
+}
+
+.regular {
+  font-weight: $font_weight_regular;
+}
+
+.medium {
+  font-weight: $font_weight_medium;
+}
+
+.bold {
+  font-weight: $font_weight_bold;
+}

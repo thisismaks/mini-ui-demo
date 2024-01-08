@@ -1,0 +1,35 @@
+@import "../../theme";
+
+.details {
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  color: inherit;
+
+  summary {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    transition: margin 150ms ease-out;
+
+    & > svg {
+      transform: rotate(0deg);
+      transition: transform 150ms ease 0s;
+    }
+  }
+
+  &[open] {
+    summary > svg {
+      transform: rotate(180deg);
+    }
+
+    summary {
+      margin-bottom: 10px;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

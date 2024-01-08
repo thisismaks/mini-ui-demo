@@ -1,0 +1,26 @@
+@import "../../ui/theme/theme";
+
+.radioGroupRoot {
+  display: flex;
+  flex-direction: column;
+  border-radius: $border_radius;
+  border: $border_default;
+  overflow: hidden;
+}
+
+.radioGroupRow {
+  width: 100%;
+  background-color: $background_paper;
+  padding-right: $spacing * 2;
+  margin-left: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.radioGroupCheckedRow {
+  @extend .radioGroupRow;
+
+  background-color: $indigo_8;
+}

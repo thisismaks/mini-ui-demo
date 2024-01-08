@@ -1,0 +1,30 @@
+@import "../../theme";
+
+.base {
+  @include _body1;
+
+  border-radius: $spacing / 2;
+  box-shadow: none;
+  padding: $spacing $spacing * 2;
+  color: $common_white;
+  display: flex;
+  align-items: baseline;
+  gap: $spacing;
+  justify-content: space-between;
+}
+
+.success {
+  background-color: $success_main;
+}
+
+.info {
+  background-color: $primary_main;
+}
+
+.warning {
+  background-color: $warning_main;
+}
+
+.error {
+  background-color: $error_main;
+}

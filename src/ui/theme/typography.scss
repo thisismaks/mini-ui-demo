@@ -1,0 +1,116 @@
+$font_weight_light: 300;
+$font_weight_regular: 400;
+$font_weight_medium: 600;
+$font_weight_bold: 700;
+
+@mixin _font_family {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+@mixin _h1 {
+  @include _font_family;
+
+  font-weight: $font_weight_light;
+  font-size: 6rem;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+}
+
+@mixin _h2 {
+  @include _font_family;
+
+  font-weight: $font_weight_light;
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.00833em;
+}
+
+@mixin _h3 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0;
+}
+
+@mixin _h4 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 2.125rem;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+}
+
+@mixin _h5 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+@mixin _h6 {
+  @include _font_family;
+
+  font-weight: $font_weight_medium;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+@mixin _subtitle1 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+
+@mixin _subtitle2 {
+  @include _font_family;
+
+  font-weight: $font_weight_medium;
+  font-size: 0.875rem;
+  line-height: 1.57;
+  letter-spacing: 0.00741em;
+}
+
+@mixin _body1 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+@mixin _body2 {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+@mixin _button {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+@mixin _caption {
+  @include _font_family;
+
+  font-weight: $font_weight_regular;
+  font-size: 0.75rem;
+  line-height: 1.2; // 1.66
+  letter-spacing: 0.03333em;
+}

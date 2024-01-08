@@ -1,0 +1,77 @@
+@import "../../theme";
+@import "../../theme/particles/inputBorder";
+
+@mixin _reset {
+  input {
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    margin: 0;
+    display: block;
+    min-width: 0;
+    width: 100%;
+    padding: 10px 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin _base {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing;
+  min-width: 120px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  align-items: center;
+  box-sizing: border-box;
+  color: $text_secondary;
+  overflow: hidden;
+}
+
+// PRIMARY
+.primary {
+  @include _reset;
+  @include _base;
+  @include _border($primary_main);
+
+  background: $background_paper;
+}
+
+// SECONDARY
+.secondary {
+  @include _reset;
+  @include _base;
+  @include _border(darken($secondary_main, 30%));
+
+  background: $background_paper;
+}
+
+// ERROR
+.error {
+  @include _reset;
+  @include _base;
+  @include _border($error_main);
+
+  background: $background_paper;
+}
+
+//
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  background: $background_default;
+
+  input {
+    color: $text_disabled;
+  }
+}
+
+//
+.fullWidth {
+  width: 100%;
+}

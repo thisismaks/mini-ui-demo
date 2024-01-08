@@ -1,0 +1,100 @@
+@import "../../theme";
+@import "../../theme/particles/inputBorder";
+
+@mixin _reset {
+  input {
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    margin: 0;
+    display: block;
+    // min-width: 0;
+    padding: 10px 0;
+    width: 100%;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin _base {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing;
+  width: 120px;
+  height: 40px;
+  padding: 0 0 0 12px;
+  border-radius: 6px;
+  align-items: center;
+  box-sizing: border-box;
+  color: $text_secondary;
+  overflow: hidden;
+}
+
+// PRIMARY
+.primary {
+  @include _reset;
+  @include _base;
+  @include _border($primary_main);
+
+  background: $background_paper;
+}
+
+// SECONDARY
+.secondary {
+  @include _reset;
+  @include _base;
+  @include _border(darken($secondary_main, 30%));
+
+  background: $background_paper;
+}
+
+// ERROR
+.error {
+  @include _reset;
+  @include _base;
+  @include _border($error_main);
+
+  background: $background_paper;
+}
+
+//
+.disabled {
+  cursor: default;
+  pointer-events: none;
+  background: $background_default;
+
+  input {
+    color: $text_disabled;
+  }
+}
+
+//
+.buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: $border_default;
+}
+
+.buttonUp {
+  padding: 6px 12px 6px 12px;
+  border-bottom: $border_default;
+  border-radius: unset;
+  height: 50%;
+}
+
+.buttonDown {
+  padding: 6px 12px 6px 12px;
+  border-radius: unset;
+  height: 50%;
+}

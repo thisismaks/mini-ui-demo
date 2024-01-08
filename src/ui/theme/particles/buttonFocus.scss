@@ -1,0 +1,46 @@
+@import "../../theme";
+
+@mixin _focus($color) {
+  &:not(:hover):focus-visible {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 80%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      opacity: 0.25;
+      background-color: $color;
+      animation-name: focus_appear_frames, focus_ripple_frames;
+      animation-iteration-count: 1, infinite;
+      animation-duration: $focus_appear_duration, $focus_ripple_duration;
+      animation-delay: 0ms, $focus_appear_duration;
+      animation-timing-function: ease-out, linear;
+    }
+  }
+}
+
+@keyframes focus_appear_frames {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+}
+
+@keyframes focus_ripple_frames {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

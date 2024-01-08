@@ -1,0 +1,71 @@
+@import "../../theme";
+
+$animation_duration: 0.3s;
+$item_class_name: 'item'; // check how to pass it to the class="[]" construction down below
+
+@mixin _in($value) {
+  & > [class="item"] {
+    animation: $value $animation_duration;
+  }
+}
+
+.root {
+  position: fixed;
+  z-index: $z_index_modal + 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing;
+}
+
+.top-right {
+  @extend .root;
+  @include _in(right);
+
+  top: $spacing;
+  right: $spacing;
+}
+
+.bottom-right {
+  @extend .root;
+  @include _in(right);
+
+  bottom: $spacing;
+  right: $spacing;
+}
+
+.top-left {
+  @extend .root;
+  @include _in(left);
+
+  top: $spacing;
+  left: $spacing;
+}
+
+.bottom-left {
+  @extend .root;
+  @include _in(left);
+
+  bottom: $spacing;
+  left: $spacing;
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

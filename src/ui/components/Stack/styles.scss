@@ -1,0 +1,107 @@
+@import "../../theme";
+
+.base {
+  display: flex;
+  flex-direction: column;
+}
+
+//--
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+//--
+.align-items-flex-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-flex-end {
+  align-items: flex-end;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+//--
+.justify-content-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
+//--
+.gap-0 {
+  gap: 0;
+}
+
+.gap-05 {
+  gap: $spacing / 2;
+}
+
+.gap-1 {
+  gap: $spacing;
+}
+
+.gap-2 {
+  gap: $spacing * 2;
+}
+
+.gap-3 {
+  gap: $spacing * 3;
+}
+
+.gap-4 {
+  gap: $spacing * 4;
+}
+
+.gap-8 {
+  gap: $spacing * 8;
+}
+
+.gap-12 {
+  gap: $spacing * 12;
+}
+
+//
+.flex-wrap {
+  flex-wrap: wrap; // todo it for the all list!
+}

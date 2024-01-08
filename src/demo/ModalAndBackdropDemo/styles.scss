@@ -1,0 +1,32 @@
+@import "../../ui/theme/theme";
+
+.modalContent {
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  min-width: 280px;
+  max-width: 840px;
+  width: 85%;
+  background-color: $background_paper;
+  border-radius: $border_radius;
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: $border_radius;
+    background-color: rgba($asphalt_main, 0.65);
+
+    &:hover {
+      background-color: $asphalt_main;
+    }
+  }
+}
+
+.content {
+  padding: $spacing * 2;
+}

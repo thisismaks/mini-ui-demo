@@ -1,0 +1,57 @@
+@import "../../theme";
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+
+  .label {
+    color: $common_black;
+    opacity: 0.26;
+  }
+}
+
+.label {
+  @include _body2;
+
+  margin-top: $spacing;
+  margin-bottom: $spacing; // todo.. 1
+}
+
+@mixin _root {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -11px; // todo.. 1
+  margin-right: 16px;
+
+  //margin-left: 16px;
+  //margin-right: -11px;
+  //margin-left: 16px;
+  //margin-right: 16px;
+}
+
+.root_end {
+  @include _root;
+
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.root_start {
+  @include _root;
+
+  flex-direction: row-reverse;
+  vertical-align: middle;
+}
+
+.root_top {
+  @include _root;
+
+  flex-direction: column;
+}
+
+.root_bottom {
+  @include _root;
+
+  flex-direction: column-reverse;
+}

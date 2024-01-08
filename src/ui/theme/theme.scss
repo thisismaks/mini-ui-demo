@@ -1,0 +1,70 @@
+@import "colors";
+@import "typography";
+
+$common_black: #000;
+$common_white: #fff;
+
+$primary_dark: $indigo_200;
+$primary_main: $indigo_100;
+$primary_light: $indigo_64;
+$primary_contrastText: #fff;
+
+$secondary_dark: $grey_400;
+$secondary_main: $grey_200;
+$secondary_light: $grey_100;
+$secondary_contrastText: $grey_800;
+
+$error_dark: $red_60;
+$error_main: $red_main;
+$error_light: $red_40;
+$error_contrastText: $asphalt_main;
+
+$success_dark: $green_200;
+$success_main: $green_100;
+$success_light: $green_80;
+$success_contrastText: $asphalt_main;
+
+$warning_dark: $yellow_200;
+$warning_main: $yellow_100;
+$warning_light: $yellow_64;
+$success_contrastText: $asphalt_main;
+
+$text_primary: $grey_800;
+$text_secondary: $grey_600;
+$text_disabled: $grey_500;
+
+$divider_color: $grey_400;
+
+$background_default: $grey_200;
+$background_paper: #fff;
+
+$spacing: 8px;
+
+$border: 1px solid;
+$border_default: $border $divider_color;
+$border_radius: 8px;
+
+$transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+$ripple_duration: 700ms;
+$focus_appear_duration: 400ms;
+$focus_ripple_duration: 3s;
+
+$z_index_modal: 1300;
+
+// todo..
+.paper {
+  background-color: $background_paper;
+  color: $text_primary;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 1px -1px, rgba(0, 0, 0, 0.14) 0 1px 1px 0, rgba(0, 0, 0, 0.12) 0 1px 3px 0;
+  padding: $spacing * 2;
+  border-radius: $border_radius / 2;
+}
+
+//--
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:export {
+  /* stylelint-disable property-no-unknown */
+  text_secondary: $text_secondary;
+  z_index_modal: $z_index_modal;
+}

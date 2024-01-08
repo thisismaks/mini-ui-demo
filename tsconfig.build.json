@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declarationMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./lib/types"
+  },
+  "include": ["src/index.tsx", "custom_typings/**/*"]
+}

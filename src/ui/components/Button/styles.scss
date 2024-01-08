@@ -1,0 +1,229 @@
+@import "../../theme";
+@import "../../theme/particles/buttonFocus";
+
+$shadow: rgba(0, 0, 0, 0.2) 0 3px 1px -2px, rgba(0, 0, 0, 0.14) 0 2px 2px 0, rgba(0, 0, 0, 0.12) 0 1px 5px 0;
+$shadow_hover: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0, rgba(0, 0, 0, 0.12) 0 1px 10px;
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:export {
+  /* stylelint-disable property-no-unknown */
+  ripple_duration: $ripple_duration;
+}
+
+@mixin _reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: fit-content;
+}
+
+@mixin _disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@mixin _base {
+  @include _reset;
+  @include _button;
+
+  border-radius: $border_radius;
+  padding: $spacing * 0.75  $spacing * 2;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  min-width: 64px;
+  transition: $transition;
+}
+
+@mixin _ripple($color) {
+  & > ripple-tag {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple_frames $ripple_duration ease-in-out;
+    background-color: $color;
+  }
+}
+
+@keyframes ripple_frames {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+// OUTLINED
+.outlined_primary {
+  @include _base;
+  @include _ripple($primary_main);
+  @include _focus($primary_main);
+
+  color: $primary_main;
+  border: $border $primary_main;
+  background-color: $common_white;
+
+  &:hover {
+    border-color: $primary_dark;
+    background-color: rgba($primary_dark, 0.08);
+  }
+}
+
+.outlined_primary_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $text_disabled;
+  border: $border $text_disabled;
+  background-color: $common_white;
+}
+
+.outlined_secondary {
+  @include _base;
+  @include _ripple($secondary_dark);
+  @include _focus($secondary_dark);
+
+  color: $secondary_contrastText;
+  border: $border $secondary_dark;
+
+  &:hover {
+    border-color: $primary_main;
+    background-color: rgba($primary_main, 0.04);
+  }
+}
+
+.outlined_secondary_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $text_disabled;
+  border: $border $text_disabled;
+}
+
+.outlined_error {
+  @include _base;
+  @include _ripple($error_main);
+  @include _focus($error_main);
+
+  color: $error_main;
+  border: $border $error_main;
+
+  &:hover {
+    border-color: $error_dark;
+    background-color: rgba($error_main, 0.04);
+  }
+}
+
+.outlined_error_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $error_dark;
+  border: $border $error_main;
+  opacity: 0.4;
+}
+
+// CONTAINED
+.contained_primary {
+  @include _base;
+  @include _ripple($common_white);
+  @include _focus($common_white);
+
+  color: $common_white;
+  background-color: $primary_main;
+  box-shadow: $shadow;
+
+  &:hover {
+    background-color: $primary_dark;
+    box-shadow: $shadow_hover;
+  }
+}
+
+.contained_primary_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $common_white;
+  background-color: $primary_main;
+  opacity: 0.5;
+}
+
+.contained_secondary {
+  @include _base;
+  @include _ripple($secondary_dark);
+  @include _focus($secondary_dark);
+
+  color: $secondary_contrastText;
+  background-color: $secondary_main;
+  box-shadow: $shadow;
+
+  &:hover {
+    background-color: $secondary_light;
+    box-shadow: $shadow_hover;
+  }
+}
+
+.contained_secondary_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $secondary_contrastText;
+  background-color: $secondary_main;
+  opacity: 0.5;
+}
+
+.contained_error {
+  @include _base;
+  @include _ripple($common_white);
+  @include _focus($common_white);
+
+  color: $common_white;
+  background-color: $error_main;
+  box-shadow: $shadow;
+
+  &:hover {
+    background-color: $error_dark;
+    box-shadow: $shadow_hover;
+  }
+}
+
+.contained_error_disabled {
+  @include _base;
+  @include _disabled;
+
+  color: $common_white;
+  background-color: $error_main;
+  opacity: 0.5;
+}
+
+// -
+
+.start_icon {
+  margin-right: $spacing;
+  margin-left: -$spacing / 2;
+}
+
+.end_icon {
+  margin-right: -$spacing / 2;
+  margin-left: $spacing;
+}
+
+// -
+.fullWidth {
+  width: 100%;
+}

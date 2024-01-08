@@ -1,0 +1,14 @@
+@import "../../theme";
+
+.base {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba($common_black, 0.5);
+  z-index: $z_index_modal;
+}

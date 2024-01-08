@@ -1,0 +1,183 @@
+@import "../../theme";
+@import "../../theme/particles/buttonFocus";
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:export {
+  /* stylelint-disable property-no-unknown */
+  ripple_duration: $ripple_duration;
+}
+
+$small: $spacing;
+$medium: $spacing * 2;
+
+@mixin _reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: fit-content;
+}
+
+@mixin _base($size) {
+  @include _reset;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  padding: $size;
+  border-radius: 50%;
+  overflow: hidden;
+  // color: rgba($common_black, 0.54);
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+@mixin _ripple($color) {
+  & > ripple-tag {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple_frames $ripple_duration ease-in-out;
+    background-color: $color;
+  }
+}
+
+@keyframes ripple_frames {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@mixin _disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+// SMALL
+.small_primary {
+  @include _base($small);
+  @include _ripple(rgba($primary_main, 0.4));
+  @include _focus(rgba($primary_main, 0.6));
+
+  color: $primary_main;
+
+  &:hover {
+    background-color: rgba($primary_main, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+.small_secondary {
+  @include _base($small);
+  @include _ripple(rgba($text_secondary, 0.4));
+  @include _focus(rgba($text_secondary, 0.6));
+
+  color: $text_secondary;
+
+  &:hover {
+    background-color: rgba($text_secondary, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+.small_error {
+  @include _base($small);
+  @include _ripple(rgba($error_main, 0.4));
+  @include _focus(rgba($error_main, 0.6));
+
+  color: $error_main;
+
+  &:hover {
+    background-color: rgba($error_main, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+// MEDIUM
+.medium_primary {
+  @include _base($medium);
+  @include _ripple(rgba($primary_main, 0.4));
+  @include _focus(rgba($primary_main, 0.6));
+
+  color: $primary_main;
+
+  &:hover {
+    background-color: rgba($primary_main, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+.medium_secondary {
+  @include _base($medium);
+  @include _ripple(rgba($text_secondary, 0.4));
+  @include _focus(rgba($text_secondary, 0.6));
+
+  color: $text_secondary;
+
+  &:hover {
+    background-color: rgba($text_secondary, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+.medium_error {
+  @include _base($medium);
+  @include _ripple(rgba($error_main, 0.4));
+  @include _focus(rgba($error_main, 0.6));
+
+  color: $error_main;
+
+  &:hover {
+    background-color: rgba($error_main, 0.04);
+  }
+
+  &:disabled {
+    @include _disabled;
+  }
+}
+
+//
+.start {
+  margin-left: -$spacing;
+}
+
+.end {
+  margin-right: -$spacing;
+}
